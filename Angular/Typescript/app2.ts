@@ -27,17 +27,18 @@ class Carro {
 
 class Concessionaria {
     private endereco: string
-    private listaDeCarros: any
+    private listaDeCarros: Carro[]
 
-    constructor(enderecoParam: string) {
+    constructor(enderecoParam: string, listaDeCarrosParam: Carro[]) {
         this.endereco = enderecoParam
+        this.listaDeCarros = listaDeCarrosParam
     }
 
     public fornecerEndereco(): string {
         return this.endereco
     }
 
-    public mostrarListaDecarros(): any {
+    public mostrarListaDecarros(): Carro[] {
         return this.listaDeCarros
     }
 }
@@ -47,7 +48,7 @@ class Pessoa {
     private carroPreferido: string
     private carro: any
 
-    constructor(nomeParam: string, carroPrefParam : string) {
+    constructor(nomeParam: string, carroPrefParam: string) {
         this.nome = nomeParam
         this.carroPreferido = carroPrefParam
     }
@@ -60,7 +61,7 @@ class Pessoa {
         return this.carroPreferido;
     }
 
-    public comprarCarro(carroParam : any): void {
+    public comprarCarro(carroParam: any): void {
         this.carro = carroParam
     }
 
@@ -68,3 +69,18 @@ class Pessoa {
         return this.carro;
     }
 }
+
+/*********Criar carros */
+let carroA = new Carro('Lamborghini Aventator', 2);
+let carroB = new Carro('Porsche 911 GT3', 2);
+let carroC = new Carro('Honda Fit', 4);
+
+/**Montar lista de carros da concessionária */
+// let listaDeCarros : Array<Carro> = [carroA, carroB, carroC]
+let listaDeCarros: Carro[] = [carroA, carroB, carroC]
+
+let concessionaria = new Concessionaria('Raja Gabáglia', listaDeCarros)
+
+/**exibir lista de carros */
+
+console.log(concessionaria.mostrarListaDecarros())

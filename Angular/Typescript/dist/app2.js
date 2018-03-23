@@ -21,8 +21,9 @@ var Carro = /** @class */ (function () {
     return Carro;
 }());
 var Concessionaria = /** @class */ (function () {
-    function Concessionaria(enderecoParam) {
+    function Concessionaria(enderecoParam, listaDeCarrosParam) {
         this.endereco = enderecoParam;
+        this.listaDeCarros = listaDeCarrosParam;
     }
     Concessionaria.prototype.fornecerEndereco = function () {
         return this.endereco;
@@ -51,3 +52,13 @@ var Pessoa = /** @class */ (function () {
     };
     return Pessoa;
 }());
+/*********Criar carros */
+var carroA = new Carro('Lamborghini Aventator', 2);
+var carroB = new Carro('Porsche 911 GT3', 2);
+var carroC = new Carro('Honda Fit', 4);
+/**Montar lista de carros da concessionária */
+// let listaDeCarros : Array<Carro> = [carroA, carroB, carroC]
+var listaDeCarros = [carroA, carroB, carroC];
+var concessionaria = new Concessionaria('Raja Gabáglia', listaDeCarros);
+/**exibir lista de carros */
+console.log(concessionaria.mostrarListaDecarros());
