@@ -48,7 +48,7 @@ var Pessoa = /** @class */ (function () {
         this.carro = carroParam;
     };
     Pessoa.prototype.dizerCarroQueTem = function () {
-        return this.carro;
+        return this.carro['modelo'];
     };
     return Pessoa;
 }());
@@ -61,4 +61,12 @@ var carroC = new Carro('Honda Fit', 4);
 var listaDeCarros = [carroA, carroB, carroC];
 var concessionaria = new Concessionaria('Raja Gabáglia', listaDeCarros);
 /**exibir lista de carros */
-console.log(concessionaria.mostrarListaDecarros());
+//console.log(concessionaria.mostrarListaDecarros())
+/**Comprar carro */
+var cliente = new Pessoa('Sô Zé', 'Porsche 911 GT3');
+console.log("O carro preferido do " + cliente.dizerNome() + " é o " + cliente.dizerCarroPreferido());
+concessionaria.mostrarListaDecarros().map(function (carro) {
+    if (carro['modelo'] == cliente.dizerCarroPreferido())
+        cliente.comprarCarro(carro);
+});
+console.log(cliente.dizerCarroQueTem());
