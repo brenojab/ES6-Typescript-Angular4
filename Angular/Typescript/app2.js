@@ -1,4 +1,3 @@
-"use strict";
 var Carro = /** @class */ (function () {
     /**
      Construtor
@@ -21,8 +20,7 @@ var Carro = /** @class */ (function () {
     return Carro;
 }());
 var Concessionaria = /** @class */ (function () {
-    function Concessionaria(enderecoParam) {
-        this.endereco = enderecoParam;
+    function Concessionaria() {
     }
     Concessionaria.prototype.fornecerEndereco = function () {
         return this.endereco;
@@ -32,22 +30,5 @@ var Concessionaria = /** @class */ (function () {
     };
     return Concessionaria;
 }());
-var Pessoa = /** @class */ (function () {
-    function Pessoa(nomeParam, carroPrefParam) {
-        this.nome = nomeParam;
-        this.carroPreferido = carroPrefParam;
-    }
-    Pessoa.prototype.dizerNome = function () {
-        return this.nome;
-    };
-    Pessoa.prototype.dizerCarroPreferido = function () {
-        return this.carroPreferido;
-    };
-    Pessoa.prototype.comprarCarro = function (carroParam) {
-        this.carro = carroParam;
-    };
-    Pessoa.prototype.dizerCarroQueTem = function () {
-        return this.carro;
-    };
-    return Pessoa;
-}());
+var concessionaria = new Concessionaria();
+console.log(concessionaria);

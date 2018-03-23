@@ -7,28 +7,64 @@ class Carro {
      Construtor
      */
     constructor(modeloParam: string, numeroDePortasParam: number) {
-        this.modelo = modeloParam;
-        this.numeroDePortas = numeroDePortasParam;
+        this.modelo = modeloParam
+        this.numeroDePortas = numeroDePortasParam
     }
 
     public acelerar(): void {
-        this.velocidade = this.velocidade + 10;
+        this.velocidade = this.velocidade + 10
     }
 
     public parar(): void {
-
+        this.velocidade = 0
     }
 
     public velocidadeAtual(): number {
-
-        return 0;
+        return this.velocidade
     }
 
 }
 
-// instanciação
-let carroA = new Carro("Aventator", 2);
+class Concessionaria {
+    private endereco: string
+    private listaDeCarros: any
 
-console.log(carroA);
-carroA.acelerar();
-console.log(carroA);
+    constructor(enderecoParam: string) {
+        this.endereco = enderecoParam
+    }
+
+    public fornecerEndereco(): string {
+        return this.endereco
+    }
+
+    public mostrarListaDecarros(): any {
+        return this.listaDeCarros
+    }
+}
+
+class Pessoa {
+    private nome: string
+    private carroPreferido: string
+    private carro: any
+
+    constructor(nomeParam: string, carroPrefParam : string) {
+        this.nome = nomeParam
+        this.carroPreferido = carroPrefParam
+    }
+
+    public dizerNome(): string {
+        return this.nome;
+    }
+
+    public dizerCarroPreferido(): string {
+        return this.carroPreferido;
+    }
+
+    public comprarCarro(carroParam : any): void {
+        this.carro = carroParam
+    }
+
+    public dizerCarroQueTem(): Carro {
+        return this.carro;
+    }
+}
